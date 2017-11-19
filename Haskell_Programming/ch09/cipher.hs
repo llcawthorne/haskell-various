@@ -1,4 +1,3 @@
--- cipher.hs
 module Cipher where
 
 import Data.Char
