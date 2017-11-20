@@ -51,7 +51,8 @@ digitToWord 9 = "nine"
 digitToWord _ = "unknown"
 
 digits :: Int -> [Int]
-digits n = undefined
+digits 0 = []
+digits n = digits (n `div` 10) ++ [n `mod` 10]
 
 wordNumber :: Int -> String
-wordNumber n = intersperse '-' $ concat $ map digitToWord (digits n)
+wordNumber n = concat $ intersperse "-" $ map digitToWord (digits n)
